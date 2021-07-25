@@ -10,6 +10,7 @@ gem 'rails', '~> 6.1.4'
 gem 'pg'
 gem 'devise'
 gem 'bootstrap'
+gem 'pry', '~> 0.13.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
