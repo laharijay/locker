@@ -1,4 +1,23 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <strong>User Name:</strong>
+  <%= @info.user_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @info.email %>
+</p>
+
+<p>
+  <strong>Website Name:</strong>
+  <%= @info.website_name %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @info.password %>
+</p>
 
 <%= link_to 'Edit', edit_info_path(@info) %> |
 <%= link_to 'Back', infos_path %>

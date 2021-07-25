@@ -5,6 +5,7 @@ class CreateInfos < ActiveRecord::Migration[6.1]
       t.string :email
       t.string :website_name
       t.string :password
+      t.string :confirm_password
       t.references :user
       t.timestamps
     end
