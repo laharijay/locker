@@ -60,7 +60,7 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
-  config.action_mailer.default_url_options = { host: 'personal-locker-app.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'personal-locker-app.herokuapp.com', protocol: 'https' }
   config.require_master_key = true
   # config.action_mailer.default_url_options = { host: 'localhost:3000',protocol: 'http'}
   config.action_mailer.perform_deliveries = true
