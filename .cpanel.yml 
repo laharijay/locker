@@ -1,0 +1,20 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html
+    - /bin/mkdir -p $DEPLOYPATH/tmp
+    - /bin/mkdir -p $DEPLOYPATH/tmp/pids
+    - /bin/mkdir -p $DEPLOYPATH/tmp/sockets
+    - /bin/mkdir -p $DEPLOYPATH/log
+    - /usr/bin/git clone https://github.com/laharijay/locker.git $DEPLOYPATH
+   # - /bin/ln -s $HOME/<path-to-ruby>/bin/ruby $DEPLOYPATH/bin/ruby
+   # - /bin/ln -s $HOME/<path-to-ruby>/bin/bundle $DEPLOYPATH/bin/bundle
+    - /bin/chmod 777 $DEPLOYPATH/tmp
+    - /bin/chmod 777 $DEPLOYPATH/tmp/pids
+    - /bin/chmod 777 $DEPLOYPATH/tmp/sockets
+    - /bin/chmod 777 $DEPLOYPATH/log
+    - /bin/chmod 777 $DEPLOYPATH/public/uploads
+    - cd $DEPLOYPATH
+    - /usr/local/bin/bundle install --deployment --without development test
+    - /usr/local/bin/rake db:migrate RAILS_ENV=production
+    - /usr/local/bin/rake assets:precompile RAILS_ENV=production
