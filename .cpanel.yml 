@@ -7,8 +7,6 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH/tmp/sockets
     - /bin/mkdir -p $DEPLOYPATH/log
     - /usr/bin/git clone https://github.com/laharijay/locker.git $DEPLOYPATH
-   # - /bin/ln -s $HOME/<path-to-ruby>/bin/ruby $DEPLOYPATH/bin/ruby
-   # - /bin/ln -s $HOME/<path-to-ruby>/bin/bundle $DEPLOYPATH/bin/bundle
     - /bin/chmod 777 $DEPLOYPATH/tmp
     - /bin/chmod 777 $DEPLOYPATH/tmp/pids
     - /bin/chmod 777 $DEPLOYPATH/tmp/sockets
