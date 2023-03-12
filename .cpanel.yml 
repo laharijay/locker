@@ -1,18 +1,12 @@
 ---
+version: 2
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/public_html
-    - /bin/mkdir -p $DEPLOYPATH/tmp
-    - /bin/mkdir -p $DEPLOYPATH/tmp/pids
-    - /bin/mkdir -p $DEPLOYPATH/tmp/sockets
-    - /bin/mkdir -p $DEPLOYPATH/log
-    - /usr/bin/git clone https://github.com/laharijay/locker.git $DEPLOYPATH
-    - /bin/chmod 777 $DEPLOYPATH/tmp
-    - /bin/chmod 777 $DEPLOYPATH/tmp/pids
-    - /bin/chmod 777 $DEPLOYPATH/tmp/sockets
-    - /bin/chmod 777 $DEPLOYPATH/log
-    - /bin/chmod 777 $DEPLOYPATH/public/uploads
+    - export DEPLOYPATH=/home/a1678ros/1678540682575-sh.hostgator.in 
+    - /usr/local/cpanel/3rdparty/bin/git clone https://github.com/laharijay/locker.git $DEPLOYPATH
     - cd $DEPLOYPATH
-    - /usr/local/bin/bundle install --deployment --without development test
-    - /usr/local/bin/rake db:migrate RAILS_ENV=production
-    - /usr/local/bin/rake assets:precompile RAILS_ENV=production
+    - /usr/local/cpanel/3rdparty/bin/bundle install --deployment --without development test
+    - /usr/local/cpanel/3rdparty/bin/bundle exec rake assets:precompile
+    - mkdir -p tmp/pids
+    - touch tmp/restart.txt
+    - /usr/local/cpanel/3rdparty/bin/bundle exec rake db:migrate RAILS_ENV=production
